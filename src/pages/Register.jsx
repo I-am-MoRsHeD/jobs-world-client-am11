@@ -36,7 +36,7 @@ const Register = () => {
                             <input
                                 type="password"
                                 name="password"
-                                placeholder="Password" className="input text-white"
+                                placeholder="Password" className="input"
                                 required />
                         </div>
                         <div className="form-control mb-6 border-b-2">
@@ -58,7 +58,7 @@ const Register = () => {
                             <button className="btn btn-warning hover:btn-ghost">Register</button>
                         </div>
                         <div className='mt-2'>
-                            <p>Already have an account? Please <Link className='font-semibold text-orange-500 underline' to='/register'>Login</Link></p>
+                            <p>Already have an account? Please <Link className='font-semibold text-orange-500 underline' to='/login'>Login</Link></p>
                         </div>
                     </form>
                 </div>

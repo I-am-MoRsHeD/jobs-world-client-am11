@@ -28,9 +28,7 @@ const Login = () => {
                                 type="password"
                                 name="password"
                                 placeholder="Password"
-                                className="input text-white" required />
-
-
+                                className="input" required />
                         </div>
                         <div className='flex justify-between mt-4'>
                             <div>
