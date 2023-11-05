@@ -1,16 +1,33 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import React, { useContext } from 'react';
+import { NavLink } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider/AuthProvider';
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext);
+
     const navlinks = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/alljobs">All Jobs</NavLink></li>
-        <li><NavLink to="/applied">Applied Jobs</NavLink></li>
-        <li><NavLink to="/addjob">Add a Job</NavLink></li>
-        <li><NavLink to="/myjobs">My Jobs</NavLink></li>
+        {
+            user?.email ? <>
+                <li><NavLink to="/applied">Applied Jobs</NavLink></li>
+                <li><NavLink to="/addjob">Add a Job</NavLink></li>
+                <li><NavLink to="/myjobs">My Jobs</NavLink></li>
+            </> : ''
+        }
         <li><NavLink to="/blogs">Blogs</NavLink></li>
     </>
+
+    const handleLogout = () => {
+        logOut()
+            .then(result => {
+                console.log(result)
+            })
+            .catch(error => {
+                console.log(error)
+            })
+    }
     return (
         <div>
             <div className="bg-gradient-to-r from-[#f6e4e0] to-[#fbfadb]">
@@ -32,7 +49,13 @@ const Navbar = () => {
                         </ul>
                     </div>
                     <div className="navbar-end">
-                        <button className="btn"><NavLink to="/login">Login</NavLink></button>
+                        {
+                            user?.email ? <>
+                                <img className='w-10 rounded-full' src={user?.photoURL} title={user?.displayName} alt="" />
+                                <button onClick={handleLogout} className='btn bg-[#86d5dd]'>LogOut</button>
+                            </> :
+                                <button className="btn"><NavLink to="/login">Login</NavLink></button>
+                        }
                     </div>
                 </div>
             </div>
