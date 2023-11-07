@@ -7,6 +7,7 @@ import AddJobs from "../pages/AddJobs";
 import AllJobs from "../pages/AllJobs";
 import JobDetails from "../Components/JobDetails/JobDetails";
 import PrivateRoute from "./PrivateRoute";
+import ErrorPage from "../pages/ErrorPage/ErrorPage";
 
 
 
@@ -14,6 +15,7 @@ const router = createBrowserRouter([
     {
         path: '/',
        element: <MainLayout></MainLayout>,
+       errorElement: <ErrorPage></ErrorPage>,
        children: [
         {
             path: '/',

@@ -4,9 +4,10 @@ import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css'
 
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import Swal from 'sweetalert2';
 
 const AddJobs = () => {
-    const {user} = useContext(AuthContext);
+    const { user } = useContext(AuthContext);
     const [startDate, setStartDate] = useState(null);
     const [applicants, setApplicants] = useState(0);
 
@@ -46,6 +47,13 @@ const AddJobs = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data);
+                if (data.insertedId) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Wow....!',
+                        text: 'Successfully added a job'
+                    })
+                }
             })
 
 
@@ -53,7 +61,7 @@ const AddJobs = () => {
         //remote: https://i.ibb.co/8r5RmZZ/remote.jpg
         // hybrid: https://i.ibb.co/D5pZdVx/hybrid.jpg
         // partTime: https://i.ibb.co/3d9QGcp/partTime.jpg
-        // We are searching for an experienced web developer for your task..Must be 2 years experienced on react-js,node-js and express js also..And also be expert on css framework and others....
+        // We are searching for an experienced Web Developer for your task..Must be 2 years experienced on react-js,node-js and express js also..And also be expert on css framework and others....
 
 
     }
@@ -105,13 +113,20 @@ const AddJobs = () => {
                     </div>
                     <div className='w-1/2'>
                         <label>
-                            <h2>Posting Date (MM/DD/YYYY)</h2>
+                            <h2>Email</h2>
                         </label>
-                        <input className=' p-1 w-1/2' type="date" name="date" id="" />
+                        <input className='w-full p-2 rounded-lg' type="email" name="email" defaultValue={user?.email
+                        } placeholder='Email' id="" />
                     </div>
                 </div>
                 <div className='w-5/6 flex my-10 gap-8 mx-auto '>
                     <textarea name="desc" id="" placeholder='Short Description' cols="100" rows="3"></textarea>
+                    <div className='w-1/2'>
+                        <label>
+                            <h2>Posting Date (MM/DD/YYYY)</h2>
+                        </label>
+                        <input className=' p-1 w-1/2' type="date" name="date" id="" />
+                    </div>
                 </div>
                 <div className='w-5/6 flex my-10 gap-8 mx-auto '>
                     <div className='w-1/2 flex gap-2'>
@@ -129,8 +144,8 @@ const AddJobs = () => {
                         />
                     </div>
                     <div className='w-1/2'>
-                        <label>Applicants : </label>
-                        <input className='w-10 pl-2' type="number"  name="applicants" id="" />
+                        <label>Applicants :  </label>
+                        <input className='w-10 pl-2' type="number" value={applicants} name="applicants" id="" />
                     </div>
 
                 </div>
