@@ -4,6 +4,7 @@ import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
 import AddJobs from "../pages/AddJobs";
+import AllJobs from "../pages/AllJobs";
 
 
 
@@ -14,11 +15,13 @@ const router = createBrowserRouter([
        children: [
         {
             path: '/',
-            element: <Home></Home>
+            element: <Home></Home>,
+            loader: () => fetch('http://localhost:5000/jobs')
         },
         {
             path: '/alljobs',
-            element: <Home></Home>
+            element: <AllJobs></AllJobs>,
+            loader: () => fetch('http://localhost:5000/jobs')
         },
         {
             path: '/applied',

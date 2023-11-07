@@ -130,7 +130,7 @@ const AddJobs = () => {
                     </div>
                     <div className='w-1/2'>
                         <label>Applicants : </label>
-                        <input className='w-10 pl-2' type="number" value={applicants} name="applicants" id="" />
+                        <input className='w-10 pl-2' type="number"  name="applicants" id="" />
                     </div>
 
                 </div>
