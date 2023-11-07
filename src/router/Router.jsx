@@ -3,6 +3,7 @@ import MainLayout from "../layout/MainLayout";
 import Home from "../pages/Home";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import AddJobs from "../pages/AddJobs";
 
 
 
@@ -25,7 +26,7 @@ const router = createBrowserRouter([
         },
         {
             path: '/addjob',
-            element: <Home></Home>
+            element: <AddJobs></AddJobs>
         },
         {
             path: '/myjobs',

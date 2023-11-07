@@ -56,6 +56,7 @@ const Register = () => {
 
                 // updating users profile
                 updateProfile(result.user, {
+                    ...result.user,
                     displayName: name,
                     photoURL: photo
                 })

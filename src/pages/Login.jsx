@@ -1,9 +1,9 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
+import { AuthContext } from '../AuthProvider/AuthProvider';
 
 const Login = () => {
     const { signUser, signInPopUp } = useContext(AuthContext);
