@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext, useState } from 'react';
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 import { updateProfile } from 'firebase/auth';
@@ -11,6 +11,7 @@ const Register = () => {
     const [error, setError] = useState();
     const [showPassword, setShowPassword] = useState(false);
     const navigate = useNavigate();
+    const location = useLocation();
 
     const handleRegister = e => {
         e.preventDefault();
@@ -51,7 +52,7 @@ const Register = () => {
                     title: 'Wow....!',
                     text: 'Successfully registered'
                 })
-                navigate('/')
+                navigate(location?.state ? location?.state : '/')
 
 
                 // updating users profile

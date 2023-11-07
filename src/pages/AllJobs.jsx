@@ -6,9 +6,6 @@ const AllJobs = () => {
     const jobs = useLoaderData();
     console.log(jobs)
 
-    const handleDetails = id => {
-        console.log(id)
-    }
 
     return (
         <div>
