@@ -9,11 +9,27 @@ import "../Components/Home/Job.css";
 const Home = () => {
     const jobs = useLoaderData();
     console.log(jobs)
-    const [cards, setCards] = useState(); 
+    const [cards, setCards] = useState(jobs); 
 
     const handleJobs = category => {
         if(category === 'All'){
-            setCards(jobs);
+            setCards(jobs)
+        }
+        else if(category === 'On Site'){
+            const onSiteJob = jobs.filter(job => job?.category === 'On Site');
+            setCards(onSiteJob)
+        }
+        else if(category === 'Remote'){
+            const remoteJob = jobs.filter(job => job?.category === 'Remote');
+            setCards(remoteJob)
+        }
+        else if(category === 'Hybrid'){
+            const hybridJob = jobs.filter(job => job?.category === 'Hybrid');
+            setCards(hybridJob)
+        }
+        else if(category === 'Part Time'){
+            const partTimeJob = jobs.filter(job => job?.category === 'Part Time');
+            setCards(partTimeJob)
         }
     }
 

@@ -3,7 +3,6 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const JobCategories = ({ job }) => {
-    // console.log(Object.keys(job).join(","))
     const { _id, name, photo, deadline, category, title, salary_range, date, applicants } = job;
 
     return (
