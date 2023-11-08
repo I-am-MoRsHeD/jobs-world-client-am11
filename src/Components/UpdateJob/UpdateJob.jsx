@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react';
 import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css'
 import { useLoaderData, useParams } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const UpdateJob = () => {
     const [startDate, setStartDate] = useState(null);
@@ -14,7 +15,7 @@ const UpdateJob = () => {
         const findJob = jobs.filter(job => job._id === id);
         setJobDetails(findJob)
     }, [id, jobs])
-    
+
 
     const handleUpdateJob = e => {
         e.preventDefault();
@@ -44,17 +45,24 @@ const UpdateJob = () => {
         console.log(updateJob)
 
 
-        fetch(`http://localhost:5000/jobs/${id}`,{
+        fetch(`http://localhost:5000/jobs/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'
             },
             body: JSON.stringify(updateJob)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log(data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.modifiedCount > 0) {
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Nice...',
+                        text: 'Job updated successfully!'
+                    })
+                }
+            })
 
 
     }

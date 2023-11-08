@@ -2,14 +2,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const JobCategories = ({ job, cards, setCards }) => {
+const JobCategories = ({ job }) => {
     // console.log(Object.keys(job).join(","))
-    const { _id, name, photo, description, deadline, category, title, salary_range, date, applicants } = job;
+    const { _id, name, photo, deadline, category, title, salary_range, date, applicants } = job;
 
     return (
         <div>
             <div className="card bg-[#c5f1b6] shadow-xl">
-                {/* <figure><img src={photo} alt="Job Thumbnail" /></figure> */}
+                <figure><img src={photo} alt="Job Thumbnail" /></figure>
                 <div className="py-10 px-4 space-y-3">
                     <h2 className="card-title">Posted from <span className='font-bold'>{name}</span></h2>
                     <h2 className="card-title font-extrabold">{title}</h2>

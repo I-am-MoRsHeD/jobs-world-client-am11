@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext, useEffect, useState } from 'react';
-import { useLoaderData, useParams } from 'react-router-dom';
+import { useLoaderData, useNavigate, useParams } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 
@@ -86,13 +86,13 @@ const JobDetails = () => {
         <div>
             {
                 jobDetails.map(jobDetail => <div
-                    className='mt-10 mb-72 max-w-5xl mx-auto'
+                    className='mt-10 mb-72 max-w-6xl mx-auto'
                     key={jobDetail._id}>
                     <img className='w-[800px]' src={jobDetail.photo} alt="Movie" />
                     <div className='absolute -mt-[500px]'>
                         <img className='w-16' src="https://i.ibb.co/VDjjm8p/company-logo.png" alt="" />
                     </div>
-                    <div className='bg-[#869780] w-[440px] space-y-5 px-6 py-16 lg:absolute left-[740px] -bottom-72 shadow-2xl rounded-lg'>
+                    <div className='bg-[#eef0ed] w-[440px] space-y-5 px-6 py-16 lg:absolute left-[740px] -bottom-72 shadow-2xl rounded-lg'>
                         <h2 className="text-4xl font-bold">{jobDetail.title}</h2>
                         <p>{jobDetail.description
                         }</p>
@@ -131,7 +131,7 @@ const JobDetails = () => {
                                                 </label>
                                                 <select className=' p-1 w-1/2' name="category" id="type">
                                                     <option defaultValue={jobDetail.category
-                                                    } value="">{jobDetail.category}</option>
+                                                    } value={jobDetail?.category}>{jobDetail.category}</option>
                                                 </select>
                                             </div>
                                         </div>

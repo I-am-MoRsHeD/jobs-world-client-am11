@@ -12,7 +12,9 @@ const Home = () => {
     const [cards, setCards] = useState(); 
 
     const handleJobs = category => {
-        setCards(category);
+        if(category === 'All'){
+            setCards(jobs);
+        }
     }
 
     return (
@@ -23,20 +25,18 @@ const Home = () => {
                 <div className='text-center my-10'>
                     <h2 className="text-4xl font-bold">Job Categories</h2>
                     <ul className='tabs gap-4'>
-                        <li>All Jobs</li>
-                        <li onClick={() => handleJobs(jobs.category)}>On Site</li>
-                        <li>Remote</li>
-                        <li>Hybrid</li>
-                        <li>Part Time</li>
+                        <li onClick={() => handleJobs('All')}>All Jobs</li>
+                        <li onClick={() => handleJobs('On Site')}>On Site</li>
+                        <li onClick={() => handleJobs('Remote')}>Remote</li>
+                        <li onClick={() => handleJobs('Hybrid')}>Hybrid</li>
+                        <li onClick={() => handleJobs('Part Time')}>Part Time</li>
                     </ul>
                 </div>
                 <div className='grid grid-cols-3 gap-5'>
                     {
-                        jobs.map(job => <JobCategories
+                        cards?.map(job => <JobCategories
                             key={job._id}
                             job={job}
-                            setCards={setCards}
-                            cards={cards}
                         ></JobCategories>)
                     }
                 </div>
