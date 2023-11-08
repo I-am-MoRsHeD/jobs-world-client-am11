@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useLoaderData, useParams } from 'react-router-dom';
 import { AuthContext } from '../../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const JobDetails = () => {
     const { user } = useContext(AuthContext);
@@ -84,6 +85,9 @@ const JobDetails = () => {
 
     return (
         <div>
+            <Helmet>
+            <title>JobsWorld | JobDetails </title>
+            </Helmet>
             {
                 jobDetails.map(jobDetail => <div
                     className='mt-10 mb-72 max-w-6xl mx-auto'

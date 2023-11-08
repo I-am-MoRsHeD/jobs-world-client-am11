@@ -1,9 +1,13 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
+import { Helmet } from 'react-helmet-async';
 
 const Blogs = () => {
     return (
         <div className='max-w-6xl my-10 mx-auto'>
+            <Helmet>
+                <title>JobsWorld | Blogs </title>
+            </Helmet>
             <h2 className="text-6xl font-bold text-center mb-14 mt-5">Important Blogs</h2>
             <div>
                 <h2 className="text-4xl mb-2 font-bold">-What is an access token and refresh token? How do they work and where should we

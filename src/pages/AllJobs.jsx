@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext, useRef, useState } from 'react';
+import { Helmet } from 'react-helmet-async';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const AllJobs = () => {
@@ -12,20 +13,20 @@ const AllJobs = () => {
 
     const handleJobs = () => {
         const searchInput = searchRef.current.value;
-        
-        if(searchInput === 'On Site'){
+
+        if (searchInput === 'On Site') {
             const onSiteJobs = jobs.filter(job => job?.category === 'On Site');
             setMatchedJobs(onSiteJobs);
         }
-        else if(searchInput === 'Remote'){
+        else if (searchInput === 'Remote') {
             const remoteJobs = jobs.filter(job => job?.category === 'Remote');
             setMatchedJobs(remoteJobs);
         }
-        if(searchInput === 'Hybrid'){
+        if (searchInput === 'Hybrid') {
             const hybridJobs = jobs.filter(job => job?.category === 'Hybrid');
             setMatchedJobs(hybridJobs);
         }
-        if(searchInput === 'Part Time'){
+        if (searchInput === 'Part Time') {
             const partTimeJobs = jobs.filter(job => job?.category === 'Part Time');
             setMatchedJobs(partTimeJobs);
         }
@@ -34,6 +35,9 @@ const AllJobs = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>JobsWorld | AllJobs</title>
+            </Helmet>
             <div>
                 <h2 className="text-5xl font-bold text-center mt-5 font-serif border-b-2 border-gray-400 mx-auto w-3/6">All Jobs here</h2>
             </div>

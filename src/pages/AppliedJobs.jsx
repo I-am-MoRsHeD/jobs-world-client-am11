@@ -2,6 +2,7 @@
 import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const AppliedJobs = () => {
     const { user } = useContext(AuthContext);
@@ -42,6 +43,9 @@ const AppliedJobs = () => {
 
     return (
         <div>
+            <Helmet>
+            <title>JobsWorld | AppliedJobs </title>
+            </Helmet>
             <h2 className="text-5xl text-center mt-5 font-bold font-serif">Your Applied Jobs</h2>
             <div className='max-w-5xl mx-auto'>
                 <div className=' w-32 p-1 rounded-lg'>

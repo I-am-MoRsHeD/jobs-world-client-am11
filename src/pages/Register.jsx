@@ -5,6 +5,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
 import { updateProfile } from 'firebase/auth';
+import { Helmet } from 'react-helmet-async';
 
 const Register = () => {
     const { createUser, loading, signInPopUp } = useContext(AuthContext);
@@ -85,6 +86,9 @@ const Register = () => {
 
     return (
         <div>
+            <Helmet>
+            <title>JobsWorld | Register </title>
+            </Helmet>
             <div className='lg:w-1/2 mx-auto my-10'>
                 <div className='border-2 rounded-md border-orange-500'>
                     <h2 className="text-4xl font-bold pl-10 mt-10">Register</h2>

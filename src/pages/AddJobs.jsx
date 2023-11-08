@@ -5,6 +5,7 @@ import 'react-datepicker/dist/react-datepicker.css'
 
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const AddJobs = () => {
     const { user } = useContext(AuthContext);
@@ -70,6 +71,9 @@ const AddJobs = () => {
 
     return (
         <div className='lg:my-10 my-3 py-10  rounded-tl-full rounded-tr-full bg-cyan-600'>
+            <Helmet>
+                <title>JobsWorld | AddJob </title>
+            </Helmet>
             <h2 className="lg:text-4xl text-2xl mb-10 font-semibold text-center">Add a Product, <br /> Whatever you want</h2>
             <form onSubmit={handleAddJob}>
                 <div className='w-5/6 flex my-10 gap-8 mx-auto'>

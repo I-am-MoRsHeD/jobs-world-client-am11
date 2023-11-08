@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import DatePicker from "react-datepicker";
 import 'react-datepicker/dist/react-datepicker.css'
+import { Helmet } from 'react-helmet-async';
 import { useLoaderData, useParams } from 'react-router-dom';
 import Swal from 'sweetalert2';
 
@@ -69,6 +70,9 @@ const UpdateJob = () => {
 
     return (
         <div className='lg:my-10 my-3 py-10  rounded-tl-full rounded-tr-full bg-cyan-600'>
+            <Helmet>
+                <title>JobsWorld | UpdateJobs </title>
+            </Helmet>
             <form onSubmit={handleUpdateJob}>
                 <div className='w-5/6 flex my-10 gap-8 mx-auto'>
                     <div className='w-1/2'>

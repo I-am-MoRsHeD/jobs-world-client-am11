@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2';
 import { FaEye, FaEyeSlash, FaGoogle } from 'react-icons/fa';
 import { AuthContext } from '../AuthProvider/AuthProvider';
+import { Helmet } from 'react-helmet-async';
 
 const Login = () => {
     const { signUser, signInPopUp } = useContext(AuthContext);
@@ -51,6 +52,9 @@ const Login = () => {
 
     return (
         <div>
+            <Helmet>
+            <title>JobsWorld | Login </title>
+            </Helmet>
             <div className='lg:w-1/2 mx-auto my-10'>
                 <div className='border-2 rounded-md border-orange-500'>
                     <h2 className="text-4xl font-bold pl-10 mt-10">Login</h2>

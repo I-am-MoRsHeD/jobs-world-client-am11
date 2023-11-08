@@ -3,6 +3,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import Swal from 'sweetalert2';
+import { Helmet } from 'react-helmet-async';
 
 const MyJobs = () => {
     const { user } = useContext(AuthContext);
@@ -50,6 +51,9 @@ const MyJobs = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>JobsWorld | MyJobs </title>
+            </Helmet>
             <div className="overflow-x-auto max-w-6xl mx-auto">
                 <table className="table">
                     {/* head */}
