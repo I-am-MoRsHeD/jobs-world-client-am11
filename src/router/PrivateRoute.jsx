@@ -9,7 +9,8 @@ const PrivateRoute = ({ children }) => {
 
     if (loading) {
         return <div className='flex justify-center items-center h-screen'>
-            <span className="loading loading-infinity loading-lg"></span>
+            {/* <span className="loading loading-infinity loading-lg"></span> */}
+            <img src="https://i.ibb.co/bBvbWBS/loading-gif.gif" alt="" />
         </div>
     }
     if (user) {
