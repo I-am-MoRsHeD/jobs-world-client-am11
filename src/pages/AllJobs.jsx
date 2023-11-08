@@ -1,13 +1,14 @@
 // eslint-disable-next-line no-unused-vars
-import React, { useRef, useState } from 'react';
+import React, { useContext, useRef, useState } from 'react';
 import { Link, useLoaderData } from 'react-router-dom';
 
 const AllJobs = () => {
     const jobs = useLoaderData();
     console.log(jobs)
     const [matchedJobs, setMatchedJobs] = useState(jobs);
-
     const searchRef = useRef(null);
+
+
 
     const handleJobs = () => {
         const searchInput = searchRef.current.value;

@@ -5,6 +5,7 @@ import Faq from '../Components/Home/Faq';
 import { useLoaderData } from 'react-router-dom';
 import JobCategories from '../Components/Home/JobCategories';
 import "../Components/Home/Job.css";
+import Review from '../Components/Home/Review';
 
 const Home = () => {
     const jobs = useLoaderData();
@@ -59,6 +60,7 @@ const Home = () => {
             </div>
 
             <Faq></Faq>
+            <Review></Review>
         </div>
     );
 };

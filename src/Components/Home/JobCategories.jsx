@@ -1,13 +1,15 @@
 // eslint-disable-next-line no-unused-vars
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+
 
 const JobCategories = ({ job }) => {
     const { _id, name, photo, deadline, category, title, salary_range, date, applicants } = job;
+ 
 
     return (
         <div>
-            <div className="card bg-[#c5f1b6] shadow-xl">
+            <div className="card bg-white shadow-xl">
                 <figure><img src={photo} alt="Job Thumbnail" /></figure>
                 <div className="py-10 px-4 space-y-3">
                     <h2 className="card-title">Posted from <span className='font-bold'>{name}</span></h2>
@@ -21,8 +23,8 @@ const JobCategories = ({ job }) => {
                         <p className="text-xl">Category: <span className='font-bold'>{category}</span></p>
                     </div>
                     <p>Applicants: {applicants}</p>
-                    <div className="card-actions justify-end">
-                        <Link className="btn btn-warning" to={`/alljobs/${_id}`}>View Details</Link>
+                    <div className="w-full">
+                        <Link className="btn w-full btn-outline btn-warning" to={`/alljobs/${_id}`}>View Details</Link>
                     </div>
                 </div>
             </div>
