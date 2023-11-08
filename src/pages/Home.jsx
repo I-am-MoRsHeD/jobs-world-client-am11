@@ -6,29 +6,30 @@ import { useLoaderData } from 'react-router-dom';
 import JobCategories from '../Components/Home/JobCategories';
 import "../Components/Home/Job.css";
 import Review from '../Components/Home/Review';
+import { Helmet } from 'react-helmet-async';
 
 const Home = () => {
     const jobs = useLoaderData();
     console.log(jobs)
-    const [cards, setCards] = useState(jobs); 
+    const [cards, setCards] = useState(jobs);
 
     const handleJobs = category => {
-        if(category === 'All'){
+        if (category === 'All') {
             setCards(jobs)
         }
-        else if(category === 'On Site'){
+        else if (category === 'On Site') {
             const onSiteJob = jobs.filter(job => job?.category === 'On Site');
             setCards(onSiteJob)
         }
-        else if(category === 'Remote'){
+        else if (category === 'Remote') {
             const remoteJob = jobs.filter(job => job?.category === 'Remote');
             setCards(remoteJob)
         }
-        else if(category === 'Hybrid'){
+        else if (category === 'Hybrid') {
             const hybridJob = jobs.filter(job => job?.category === 'Hybrid');
             setCards(hybridJob)
         }
-        else if(category === 'Part Time'){
+        else if (category === 'Part Time') {
             const partTimeJob = jobs.filter(job => job?.category === 'Part Time');
             setCards(partTimeJob)
         }
@@ -36,6 +37,9 @@ const Home = () => {
 
     return (
         <div>
+            <Helmet>
+                <title>JobsWorld | Home</title>
+            </Helmet>
             <Banner></Banner>
 
             <div className='max-w-5xl mx-auto '>

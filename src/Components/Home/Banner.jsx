@@ -10,7 +10,7 @@ const Banner = () => {
                 <p className='text-lg text-lime-100'>A trusted platform for hunting and posting about jobs.You can find all types of jobs here</p>
                 <div>
                     <input className='w-1/2 py-3 rounded-lg bg-white' type="text" name="" id="" />
-                    <input className='btn btn-outline ml-2 btn-warning' type="submit" value="Search here" />
+                    <input className='btn btn-outline ml-2 btn-warning' type="submit" value="Search" />
                 </div>
 
             </div>
