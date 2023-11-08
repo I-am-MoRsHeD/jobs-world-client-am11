@@ -1,5 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const JobCategories = ({ job, cards, setCards }) => {
     // console.log(Object.keys(job).join(","))
@@ -22,7 +23,7 @@ const JobCategories = ({ job, cards, setCards }) => {
                     </div>
                     <p>Applicants: {applicants}</p>
                     <div className="card-actions justify-end">
-                        <button className="btn btn-warning">View Details</button>
+                        <Link className="btn btn-warning" to={`/alljobs/${_id}`}>View Details</Link>
                     </div>
                 </div>
             </div>

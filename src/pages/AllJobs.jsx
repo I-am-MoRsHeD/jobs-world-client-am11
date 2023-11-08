@@ -39,9 +39,8 @@ const AllJobs = () => {
                                 <td>{job.salary_range}</td>
                                 <th>
                                     <Link to={`/alljobs/${job._id}`}>
-                                        <button onClick={() => handleDetails(job._id)} className="btn btn-ghost btn-sm">details</button>
+                                        <button className="btn btn-ghost btn-sm">details</button>
                                     </Link>
-                                    {/* <button onClick={() => handleDetails(job._id)} className="btn btn-ghost btn-sm">details</button> */}
                                 </th>
                             </tr>)
                         }
