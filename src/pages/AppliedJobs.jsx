@@ -1,12 +1,10 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext, useEffect, useState } from 'react';
-import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
 
 const AppliedJobs = () => {
     const { user } = useContext(AuthContext);
-    const appliedJobs = useLoaderData();
 
     const [applied, setApplied] = useState([]);
     const [displayJob, setDisplayJob] = useState([]);

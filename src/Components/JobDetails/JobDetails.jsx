@@ -32,6 +32,7 @@ const JobDetails = () => {
         const salary = form.salary.value;
         const email = form.email.value;
         const resume = form.resume.value;
+        const newApplicant = jobDetails[0]?.applicants + 1;
         const appliedJob = { 
             name, 
             email, 
@@ -40,6 +41,7 @@ const JobDetails = () => {
             category,
             title,
             salary,
+            newApplicant,
             }
 
         if (name === jobDetails[0].name) {
@@ -80,7 +82,6 @@ const JobDetails = () => {
                     })
                 }
             })
-
     }
 
     return (
@@ -101,7 +102,7 @@ const JobDetails = () => {
                         <p>{jobDetail.description
                         }</p>
                         <p>Probable Salary: <span className='font-semibold'>{jobDetail.salary_range}</span></p>
-                        <p>Applied Applicants: {jobDetail.applicants}</p>
+                        <p>Applied Applicants: {jobDetail?.applicants}</p>
                         <div className='w-full'>
 
                             <button className="btn btn-outline w-full" onClick={() => document.getElementById('my_modal_1').showModal()}>Apply</button>
