@@ -59,7 +59,7 @@ const JobDetails = () => {
 
 
         // added to the database
-        fetch('http://localhost:5000/appliedJobs', {
+        fetch('https://jobs-world-server-am11-lt5zm4spz-i-am-morsheds-projects.vercel.app/appliedJobs', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'

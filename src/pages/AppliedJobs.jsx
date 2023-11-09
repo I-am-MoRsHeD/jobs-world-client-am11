@@ -37,7 +37,7 @@ const AppliedJobs = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/appliedJobs?email=${user?.email}`, { credentials: 'include' })
+        fetch(`https://jobs-world-server-am11-lt5zm4spz-i-am-morsheds-projects.vercel.app/appliedJobs?email=${user?.email}`, { credentials: 'include' })
             .then(res => res.json())
             .then(data => {
                 setApplied(data)

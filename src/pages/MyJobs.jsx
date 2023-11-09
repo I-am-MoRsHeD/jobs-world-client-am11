@@ -28,7 +28,7 @@ const MyJobs = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/jobs/${id}`, {
+                fetch(`https://jobs-world-server-am11-lt5zm4spz-i-am-morsheds-projects.vercel.app/jobs/${id}`, {
                     method: 'DELETE',
                 })
                     .then(res => res.json())
