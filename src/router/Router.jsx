@@ -24,17 +24,17 @@ const router = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('https://jobs-world-server-am11-lt5zm4spz-i-am-morsheds-projects.vercel.app/jobs')
+                loader: () => fetch(' https://jobs-world-server-am11.vercel.app/jobs')
             },
             {
                 path: '/alljobs',
                 element: <AllJobs></AllJobs>,
-                loader: () => fetch('https://jobs-world-server-am11-lt5zm4spz-i-am-morsheds-projects.vercel.app/jobs')
+                loader: () => fetch(' https://jobs-world-server-am11.vercel.app/jobs')
             },
             {
                 path: '/alljobs/:id',
                 element: <PrivateRoute><JobDetails></JobDetails></PrivateRoute>,
-                loader: () => fetch('https://jobs-world-server-am11-lt5zm4spz-i-am-morsheds-projects.vercel.app/jobs')
+                loader: () => fetch(' https://jobs-world-server-am11.vercel.app/jobs')
             },
             {
                 path: '/applied',
@@ -47,12 +47,12 @@ const router = createBrowserRouter([
             {
                 path: '/myjobs',
                 element: <PrivateRoute><MyJobs></MyJobs></PrivateRoute>,
-                loader: () => fetch('https://jobs-world-server-am11-lt5zm4spz-i-am-morsheds-projects.vercel.app/jobs')
+                loader: () => fetch(' https://jobs-world-server-am11.vercel.app/jobs')
             },
             {
                 path: '/update/:id',
                 element: <PrivateRoute><UpdateJob></UpdateJob></PrivateRoute>,
-                loader: () => fetch('https://jobs-world-server-am11-lt5zm4spz-i-am-morsheds-projects.vercel.app/jobs')
+                loader: () => fetch(' https://jobs-world-server-am11.vercel.app/jobs')
             },
             {
                 path: '/blogs',

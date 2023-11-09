@@ -46,7 +46,7 @@ const UpdateJob = () => {
         console.log(updateJob)
 
 
-        fetch(`https://jobs-world-server-am11-lt5zm4spz-i-am-morsheds-projects.vercel.app/jobs/${id}`, {
+        fetch(` https://jobs-world-server-am11.vercel.app/jobs/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json'

@@ -23,27 +23,9 @@ const AuthProvider = ({ children }) => {
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, (currentUser) => {
-            const userEmail = currentUser?.email || user?.email;
-            const loggedUser = {email: userEmail};
             setUser(currentUser);
             console.log(currentUser)
             setLoading(false);
-            // if user exist
-            if(currentUser){
-        
-                axios.post('https://jobs-world-server-am11-lt5zm4spz-i-am-morsheds-projects.vercel.app/jwt', loggedUser, {withCredentials: true})
-                .then(res => {
-                    console.log('token response', res.data)
-                })
-            }
-            else{
-                axios.post('https://jobs-world-server-am11-lt5zm4spz-i-am-morsheds-projects.vercel.app/logout', loggedUser, {
-                    withCredentials: true
-                })
-                .then(res => {
-                    console.log(res.data);
-                })
-            }
         })
         return () => {
             unSubscribe();
