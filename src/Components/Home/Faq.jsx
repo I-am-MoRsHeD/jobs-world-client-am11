@@ -9,7 +9,7 @@ const Faq = () => {
             </div>
             <div className='space-y-4'>
                 <div className="collapse collapse-arrow bg-base-200">
-                    <input type="radio" name="my-accordion-2" checked="checked" />
+                    <input type="radio" name="my-accordion-2" />
                     <div className="collapse-title text-xl font-medium">
                         Why choose Us?
                     </div>

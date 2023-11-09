@@ -98,6 +98,7 @@ const Register = () => {
                                 type="text"
                                 name="name"
                                 placeholder="Name" className="input "
+                                required
                             />
                         </div>
                         <div className="form-control mb-6 border-b-2">
@@ -123,6 +124,7 @@ const Register = () => {
                             <input
                                 name="photo"
                                 placeholder="Photo URL" className="input"
+                                required
                             />
                         </div>
                         <div>

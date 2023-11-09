@@ -1,6 +1,6 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext, useEffect, useState } from 'react';
-import { Link, useLoaderData } from 'react-router-dom';
+import { useLoaderData } from 'react-router-dom';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
 
@@ -34,12 +34,16 @@ const AppliedJobs = () => {
     }
 
 
+    useEffect(()=>{
+        fetch(`http://localhost:5000/appliedJobs?email=${user?.email}`,{credentials: 'include'})
+        .then(res => res.json())
+        .then(data => {
+            setApplied(data)
+            setDisplayJob(data);
+        })
+    },[user?.email])
 
-    useEffect(() => {
-        const myapplied = appliedJobs.filter(appliedJob => appliedJob.email === user?.email);
-        setApplied(myapplied);
-        setDisplayJob(myapplied);
-    }, [appliedJobs, user?.email])
+
 
     return (
         <div>
