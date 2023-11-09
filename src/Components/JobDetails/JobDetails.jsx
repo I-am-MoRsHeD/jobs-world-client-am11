@@ -9,6 +9,7 @@ const JobDetails = () => {
     const { user } = useContext(AuthContext);
     const { displayName, email } = user;
     const [jobDetails, setJobDetails] = useState([]);
+    const [error, setError] = useState();
     const jobs = useLoaderData();
     const { id } = useParams();
     const current = new Date();
@@ -33,31 +34,25 @@ const JobDetails = () => {
         const email = form.email.value;
         const resume = form.resume.value;
         const newApplicant = jobDetails[0]?.applicants + 1;
-        const appliedJob = { 
-            name, 
-            email, 
+        const appliedJob = {
+            name,
+            email,
             resume,
             photo,
             category,
             title,
             salary,
             newApplicant,
-            }
+        }
+
+        setError('')
 
         if (name === jobDetails[0].name) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Opps....!',
-                text: 'you cannot apply in your own posted job'
-            })
+            setError('You can not apply in your own job')
             return;
         }
         else if (currentDate === jobDetails[0].deadline) {
-            Swal.fire({
-                icon: 'error',
-                title: 'Opps....!',
-                text: 'The Deadline is over'
-            })
+            setError('Sorry..The Deadline is over!')
             return;
         }
 
@@ -74,7 +69,7 @@ const JobDetails = () => {
             .then(res => res.json())
             .then(data => {
                 console.log(data)
-                if(data.insertedId){
+                if (data.insertedId) {
                     Swal.fire({
                         icon: 'success',
                         title: 'Nice...',
@@ -87,7 +82,7 @@ const JobDetails = () => {
     return (
         <div>
             <Helmet>
-            <title>JobsWorld | JobDetails </title>
+                <title>JobsWorld | JobDetails </title>
             </Helmet>
             {
                 jobDetails.map(jobDetail => <div
@@ -162,6 +157,11 @@ const JobDetails = () => {
                                                 placeholder="Resume Link" className="input"
                                                 required
                                             />
+                                        </div>
+                                        <div className='mb-5'>
+                                            {
+                                                error ? <p className='text-red-600 text-xl'>{error}</p> : ''
+                                            }
                                         </div>
                                         <div className='w-5/6 mx-auto'>
                                             <input type="submit" className='btn btn-outline w-full' value="Apply" />

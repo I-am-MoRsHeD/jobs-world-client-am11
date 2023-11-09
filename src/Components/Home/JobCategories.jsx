@@ -1,16 +1,22 @@
 // eslint-disable-next-line no-unused-vars
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { motion } from 'framer-motion';
 
 
 const JobCategories = ({ job }) => {
     const { _id, name, photo, deadline, category, title, salary_range, date, applicants } = job;
- 
+
 
     return (
         <div>
             <div className="card bg-white shadow-xl">
-                <figure><img src={photo} alt="Job Thumbnail" /></figure>
+                <motion.div
+                    whileHover={{ scale: 1.1 }}
+
+                >
+                    <figure><img className='rounded-t-lg' src={photo} alt="Job Thumbnail" /></figure>
+                </motion.div>
                 <div className="py-10 px-4 space-y-3">
                     <h2 className="card-title">Posted from <span className='font-bold'>{name}</span></h2>
                     <h2 className="card-title font-extrabold">{title}</h2>
