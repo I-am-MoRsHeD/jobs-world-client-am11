@@ -42,10 +42,10 @@ const Home = () => {
             </Helmet>
             <Banner></Banner>
 
-            <div className='max-w-5xl mx-auto '>
+            <div className='lg:max-w-5xl mx-auto '>
                 <div className='text-center my-10'>
                     <h2 className="text-4xl font-bold">Job Categories</h2>
-                    <ul className='tabs gap-4'>
+                    <ul className='tabs tab-xs lg:tab-md gap-1 lg:gap-4'>
                         <li onClick={() => handleJobs('All')}>All Jobs</li>
                         <li onClick={() => handleJobs('On Site')}>On Site</li>
                         <li onClick={() => handleJobs('Remote')}>Remote</li>
@@ -53,7 +53,7 @@ const Home = () => {
                         <li onClick={() => handleJobs('Part Time')}>Part Time</li>
                     </ul>
                 </div>
-                <div className='grid grid-cols-3 gap-5'>
+                <div className='grid grid-cols-1 lg:grid-cols-3 gap-5'>
                     {
                         cards?.map(job => <JobCategories
                             key={job._id}

@@ -3,9 +3,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import { AuthContext } from '../AuthProvider/AuthProvider';
 import { Helmet } from 'react-helmet-async';
 import { Margin, usePDF } from 'react-to-pdf';
+import { useLoaderData } from 'react-router-dom';
 
 const AppliedJobs = () => {
     const { user } = useContext(AuthContext);
+    const jobs = useLoaderData();
     const { toPDF, targetRef } = usePDF({
         filename: "usepdf-appliedJobs.pdf",
         page: { margin: Margin.SMALL }
@@ -37,13 +39,10 @@ const AppliedJobs = () => {
 
 
     useEffect(() => {
-        fetch(` https://jobs-world-server-am11.vercel.app/appliedJobs?email=${user?.email}`)
-            .then(res => res.json())
-            .then(data => {
-                setApplied(data)
-                setDisplayJob(data);
-            })
-    }, [user?.email])
+        const findJobs = jobs.filter(job => job?.email === user?.email)
+        setApplied(findJobs)
+        setDisplayJob(findJobs);
+    }, [jobs, user?.email])
 
 
 

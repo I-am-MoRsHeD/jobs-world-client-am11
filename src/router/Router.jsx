@@ -38,7 +38,8 @@ const router = createBrowserRouter([
             },
             {
                 path: '/applied',
-                element: <PrivateRoute><AppliedJobs></AppliedJobs></PrivateRoute>
+                element: <PrivateRoute><AppliedJobs></AppliedJobs></PrivateRoute>,
+                loader: () => fetch('https://jobs-world-server-am11.vercel.app/jobs')
             },
             {
                 path: '/addjob',

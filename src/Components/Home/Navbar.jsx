@@ -31,7 +31,7 @@ const Navbar = () => {
     return (
         <div>
             <div className="bg-gradient-to-r from-[#f6e4e0] to-[#fbfadb]">
-                <div className='navbar max-w-5xl mx-auto'>
+                <div className='navbar lg:max-w-5xl mx-auto'>
                     <div className="navbar-start">
                         <div className="dropdown">
                             <label tabIndex={0} className="btn btn-ghost lg:hidden">

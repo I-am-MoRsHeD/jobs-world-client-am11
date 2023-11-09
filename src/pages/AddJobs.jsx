@@ -60,13 +60,6 @@ const AddJobs = () => {
             })
 
 
-        // onsite: https://i.ibb.co/CszL8DN/onsite.jpg
-        //remote: https://i.ibb.co/8r5RmZZ/remote.jpg
-        // hybrid: https://i.ibb.co/D5pZdVx/hybrid.jpg
-        // partTime: https://i.ibb.co/3d9QGcp/partTime.jpg
-        // We are searching for an experienced Web Developer for your task..Must be 2 years experienced on react-js,node-js and express js also..And also be expert on css framework and others....
-
-
     }
 
     return (

@@ -39,9 +39,9 @@ const AllJobs = () => {
                 <title>JobsWorld | AllJobs</title>
             </Helmet>
             <div>
-                <h2 className="text-5xl font-bold text-center mt-5 font-serif border-b-2 border-gray-400 mx-auto w-3/6">All Jobs here</h2>
+                <h2 className="lg:text-5xl text-3xl font-bold text-center mt-5 font-serif border-b-2 border-gray-400 mx-auto w-3/6">All Jobs here</h2>
             </div>
-            <div className="form-control flex flex-row gap-2 my-10 w-1/4 ml-32">
+            <div className="form-control flex flex-row gap-2 my-10 w-1/4 ml-10 lg:ml-32">
                 <input
                     type="text"
                     ref={searchRef}
@@ -52,7 +52,7 @@ const AllJobs = () => {
                 value="Search" /> */}
                 <button onClick={handleJobs} className="btn w-24 btn-warning">Search</button>
             </div>
-            <div className="overflow-x-auto my-10 max-w-5xl rounded-lg bg-gray-200 shadow-xl mx-auto">
+            <div className="overflow-x-auto my-10 lg:max-w-5xl rounded-lg bg-gray-200 shadow-xl mx-auto">
                 <table className="table">
                     {/* head */}
                     <thead>

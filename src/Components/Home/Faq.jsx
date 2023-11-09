@@ -3,7 +3,7 @@ import React from 'react';
 
 const Faq = () => {
     return (
-        <div className='flex gap-5 items-center my-20 max-w-5xl mx-auto'>
+        <div className='flex lg:flex-row flex-col gap-5 items-center my-20 max-w-5xl mx-auto'>
             <div>
                 <img src="https://i.ibb.co/6wqKk1T/FAQs.gif" alt="" />
             </div>
