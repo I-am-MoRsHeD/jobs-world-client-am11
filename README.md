@@ -8,3 +8,9 @@
 - One can apply for a job if he want.
 - But no one can apply for a job or jobs that he/she added.
 - One needs to be a user to do such things,otherwise there is no access to do anything!
+
+
+## Technologies:
+HTML5 - CSS3 - React - Tailwind CSS- DaisyUI - React Router - MongoDB - Express -Firebase -Vercel- Axios - JWT
+
+
